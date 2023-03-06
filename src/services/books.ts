@@ -14,7 +14,6 @@ export const saveBook = async (book: Book) => {
 	return Book.create<Book>(book);
 };
 
-// User Story 4 - Update Book By Id Solution
 export const updateBook = async (bookId: number, book: Book) => {
 	return Book.update(book, {
 		where: {
@@ -22,3 +21,11 @@ export const updateBook = async (bookId: number, book: Book) => {
 		},
 	});
 };
+
+export const deleteBook = async (bookId: number) => {
+	return Book.destroy({
+		where: {
+			bookId,
+		},
+	});
+}
